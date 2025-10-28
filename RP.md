@@ -567,29 +567,90 @@ SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
 
 ## `sort()` - pour trier un tableau
 
-Description à faire par vos soins...
+Permet de trier les objets du tableau par odre alphabétique ou ordre croissant pour les chiffres. 
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+// Code
+const months = ["March", "Jan", "Feb", "Dec"];
+months.sort();
+console.log(months);
+
+const array = [1, 30, 4, 21, 100000];
+array.sort();
+console.log(array);
+
+// Résultat 
+Array ["Dec", "Feb", "Jan", "March"]
+Array [1, 100000, 21, 30, 4]
 ```
 
 ## `map()` - tableau avec les résultats d'une fonction
 
-Description à faire par vos soins...
+Permet de gérer l'affichage de données (tableaux, JSON, etc.)
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+// Données
+const dataMotos = [
+    {
+        marque: "Honda",
+        modeles: [
+            { nom: "CB750 Four", annee: 1969, prix: 12000, puissance: 67, couple: 60 },
+            { nom: "Africa Twin CRF1100L", annee: 2020, prix: 15000, puissance: 102, couple: 105 },
+            { nom: "CBR1000RR Fireblade", annee: 2024, prix: 23000, puissance: 218, couple: 113 },
+            { nom: "Gold Wing", annee: 2024, prix: 33000, puissance: 126, couple: 170 },
+        ]
+    }, ... ]
+
+//Code
+function actionM1() {
+    const resultat = dataMotos.map((moto) => moto.marque);
+
+    afficherObjet(resultat);
+}
+
+//Résultat
+[
+   "Honda",
+   "Yamaha",
+   "Ducati",
+   "BMW",
+   "Harley-Davidson"
+]
 ```
 
 ## `filter()` - tableau avec les éléments passant un test
 
-Description à faire par vos soins...
+Permet de filtrer des données afin d'obtenir seulement celles dont on a besoin
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+// Données
+const dataVilles = [
+    // FRIBOURG (FR)
+    { ville: "Fribourg", canton: "FR", habitants: 39000 },
+    { ville: "Bulle", canton: "FR", habitants: 24400 },
+    { ville: "Villars-sur-Glâne", canton: "FR", habitants: 12500 },
+    ... ]
+// Code
+function actionF2() {
+
+    const resultat = dataVilles.filter(ville => ville.habitants > 10000 && ville.habitants < 25000 && ville.canton === "FR");
+
+    afficherObjet(resultat);
+}
+
+// Résultat
+[
+   {
+      "ville": "Bulle",
+      "canton": "FR",
+      "habitants": 24400
+   },
+   {
+      "ville": "Villars-sur-Glâne",
+      "canton": "FR",
+      "habitants": 12500
+   }
+]
 ```
 
 ## `groupBy()` - regroupe les éléments d'un tableau selon un règle
@@ -597,26 +658,54 @@ SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
 Description à faire par vos soins...
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+// Code
+const inventory = [
+  { name: "asparagus", type: "vegetables", quantity: 9 },
+  { name: "bananas", type: "fruit", quantity: 5 },
+  { name: "goat", type: "meat", quantity: 23 },
+  { name: "cherries", type: "fruit", quantity: 12 },
+  { name: "fish", type: "meat", quantity: 5 },
+];
+
+const result = Object.groupBy(inventory, ({ quantity }) =>
+  quantity < 6 ? "restock" : "sufficient",
+);
+
+// Resultat
+Array [Object { name: "bananas", type: "fruit", quantity: 5 }, Object { name: "fish", type: "meat", quantity: 5 }]
 ```
 
 ## `flatMap()` - chaînage de map() et flat()
 
-Description à faire par vos soins...
+Permet de créer un nouveau tableau à partir du résultat d'un traitement d'élément. 
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+// Code
+const resultat = dataMotos.flatMap((moto) => moto.modeles.map((modele) => `${moto.marque} / ${modele.nom}`)).sort();
+
+// Résultat
+[
+   "BMW / K1600GTL",
+   "BMW / R nineT",
+   "BMW / R1250GS",
+   "BMW / S1000RR",
+   ...
+]
 ```
 
 ## `reduce()` et `reduceRight()` - réduire un tableau à une seule valeur
 
-Description à faire par vos soins...
+Exécute une fonction décrite par l'utilisateur sur chaque élément du tableau et retourne une seule valeur à la fin.  
+`reduceRight()` permet de faire la même chose, mais de droite à gauche (`reduce` le fait de gauche à droite).
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+// Code
+const resultat = dataEvaluations.reduce((petit, note) => (note.date < petit.date ? { ...note } : petit), dataEvaluations[0]);
+
+    afficherObjet(resultat.date);
+
+// Resultat
+
 ```
 
 ## `reverse()` - inverser l'ordre du tableau
@@ -645,11 +734,26 @@ SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
 
 ## `new Set()` - pour supprimer les doublons
 
-Description à faire par vos soins...
+Crée un nouveau tableau sans doublon.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+// Code
+const resultat = [...new Set(dataEvaluations.map((e) => e.nom + ' ' + e.prenom))].sort();
+    afficherObjet(resultat);
+
+// Resultat 
+[
+   "D'ŒUF John",
+   "FICE Eddy",
+   "HARONI Mac",
+   "NISSENS Remy",
+   "RIQUE Théo",
+   "TARISTE Guy",
+   "TERNET Alain",
+   "TERRIEUR Alain",
+   "TERRIEUR Alex",
+   "VOYANTE Claire"
+]
 ```
 
 <svg height="12" width="100%" style="padding-top:2em;padding-bottom:1em">
