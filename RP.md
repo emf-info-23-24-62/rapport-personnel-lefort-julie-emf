@@ -81,7 +81,7 @@
 
 > Votre introduction avec notamment les objectifs opérationnels du module.
 
-# Opérateurs javascript super-cooool 😎
+# Opérateurs javascript
 
 ## opérateur `?:`
 
@@ -205,101 +205,130 @@ Lien vers la documentation officielle : [https://developer.mozilla.org/fr/docs/W
 
 ## `Math.PI` - la constante π
 
-Description à faire par vos soins...
+Représente la constante Pi (environ 3.14159)
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.PI);
+
+// Resultat
+3.141592653589793
 ```
 
 ## `Math.abs()` - la \|valeur absolue\| d'un nombre
 
-Description à faire par vos soins...
+Retourne la valeur absolue d'un nombre (pas de valeur négative)
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+function difference(a, b) {
+  return Math.abs(a - b);
+}
+
+console.log(difference(3, 5));
+
+// Resultat
+2
 ```
 
 ## `Math.pow()` - élever à une puissance
 
-Description à faire par vos soins...
+Permet d'élever un nombre à une puissance. Le premier nombre est l'indice et le 2eme est l'exposant
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.pow(7, 3));
+
+// Resultat
+343
 ```
 
 ## `Math.min()` - plus petite valeur
 
-Description à faire par vos soins...
+Renvoie la plus petite valeur d'une collection
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.min(2, 3, 1));
+
+// Resultat
+1
 ```
 
 ## `Math.max()` - plus grande valeur
 
-Description à faire par vos soins...
+Renvoie la plus grande valeur d'une collection
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.max(2, 3, 1));
+
+// Resultat
+3
 ```
 
 ## `Math.ceil()` - arrondir à la prochaine valeur entière la plus proche
 
-Description à faire par vos soins...
+Arrondit à la valeur entière la plus proche, mais seulement vers le haut
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.ceil(7.004));
+
+// Resultat
+8
 ```
 
 ## `Math.floor()` - arrondir à la précédente valeur entière la plus proche
 
-Description à faire par vos soins...
+Arrondit à la valeur entière la plus proche, mais seulement vers le bas
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.floor(7.95));
+
+// Resultat
+7
 ```
 
 ## `Math.round()` - arrondir à la valeur entière la plus proche
 
-Description à faire par vos soins...
+Permet d'arrondir un nombre à la valeur entière la plus proche.  
+Exemple pour calculer une note d'école arrondie:
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+Math.round((48 / 52) * 5 + 1)
+
+// Resultat
+6
 ```
 
 ## `Math.trunc()` - supprime la virgule et retourne la partie entière d'un nombre
 
-Description à faire par vos soins...
-
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+Math.trunc(13.37)
+
+// Résultat
+13
 ```
 
 ## `Math.sqrt()` - la raçine carrée d'un nombre
 
-Description à faire par vos soins...
+Fais la racine carrée d'un nombre
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+Math.sqrt(4)
+
+// Resultat 
+2
 ```
 
 ## `Math.random()` - générer un nombre aléatoire entre 0.0 (compris) et 1.0 (non compris)
 
-Description à faire par vos soins...
+Génère une valeur aléatoire entre 0.0 et 1, peut ensuite être adaptée pour renvoyer d'autres valeurs
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+console.log(getRandomInt(3));
+// Resultat
+1, 2 ou 3
+
 ```
 
 <svg height="12" width="100%" style="padding-top:2em;padding-bottom:1em">
@@ -312,20 +341,30 @@ Lien vers la documentation officielle : [https://developer.mozilla.org/fr/docs/W
 
 ## `JSON.stringify()` - transformer un objet Javascript en JSON
 
-Description à faire par vos soins...
+Convertit une valeur JavaScript en une chaîne JSON, en remplaçant éventuellement les valeurs si une fonction de remplacement est spécifiée ou en incluant éventuellement uniquement les propriétés spécifiées si un tableau de remplacement est spécifié.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(JSON.stringify({ x: 5, y: 6 }));
+
+// Résultat
+{"x":5,"y":6}
+
 ```
 
 ## `JSON.parse()` - transformer du JSON en objet Javascript
 
-Description à faire par vos soins...
-
+Analyse une chaîne JSON et construit la valeur ou l'objet JavaScript correspondant. Une fonction de restauration optionnelle peut être fournie pour effectuer une transformation sur l'objet résultant avant son renvoi.  
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const json = '{"result":true, "count":42}';
+const obj = JSON.parse(json);
+
+console.log(obj.count);
+
+console.log(obj.result);
+
+// Résultat
+42
+true
 ```
 
 <svg height="12" width="100%" style="padding-top:2em;padding-bottom:1em">
@@ -338,11 +377,16 @@ Lien vers la documentation officielle : [https://developer.mozilla.org/fr/docs/W
 
 ## `split()` - un ciseau qui coupe une chaîne là où un caractère apparaît et produit un tableau
 
-Description à faire par vos soins...
+Permet de séparer un string json en fonction du charatère spécifié et renvoie un nouveau tableau. 
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const str = "The quick brown fox jumps over the lazy dog.";
+
+const words = str.split(" ");
+console.log(words[3]);
+
+// Résultat
+fox
 ```
 
 ## `trim()`, `trimStart()` et `trimEnd()` - épuration des espaces en trop dans une chaîne (trimming)
@@ -814,4 +858,9 @@ ou
 
 # Conclusion
 
-> Votre conclusion avec les éléments usuels
+## Ce que j'ai appris  
+
+## Mes points forts
+
+## Mes points faibles
+
