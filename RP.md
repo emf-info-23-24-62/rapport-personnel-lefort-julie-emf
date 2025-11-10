@@ -391,20 +391,36 @@ fox
 
 ## `trim()`, `trimStart()` et `trimEnd()` - épuration des espaces en trop dans une chaîne (trimming)
 
-Description à faire par vos soins...
+Supprime les espaces avant et après un String et renvoie le résultat.  
+trimEnd supprime les espace seulement à la fin et trimStart seulement au début.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const greeting = "   Hello world!   ";
+
+console.log(greeting.trim());
+console.log(greeting.trimStart());
+console.log(greeting.trimEnd());
+
+// Résultat
+"Hello World"
+"Hello World   "
+"   Hello World"
 ```
 
 ## `padStart()` et `padEnd()` - aligner le contenu dans une chaîne de caractères
 
-Description à faire par vos soins...
+Permet de rallonger les String avec un charactère donné pour que le String atteigne une longueur précise.  
+padStart() rallonge le début et padEnd() rallonge la fin.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const str1 = "Breaded Mushrooms";
+
+console.log(str1.padEnd(25, "."));
+console.log(str1.padStart(25, "."));
+
+// Résultat
+"Breaded Mushrooms........"
+"........Breaded Mushrooms"
 ```
 
 <svg height="12" width="100%" style="padding-top:2em;padding-bottom:1em">
@@ -423,29 +439,45 @@ console.log('Coucou !'); // Coucou !
 
 ## `console.info()`, `warn()` et `error()` - Afficher un message sur la console (filtrables)
 
-Description à faire par vos soins...
+Permet d'afficher des messages précis sur la console.  
+- info(): message d'information  
+- warn(): avertissement  
+- error(): erreurs  
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.error("Erreur");
+console.warn("Avertissement");
+console.info("Info");
 ```
 
 ## `console.table()` - Afficher tout un tableau ou un objet sur la console
 
-Description à faire par vos soins...
+Affiche les données tabulaires sous forme de tableau.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.table(data)
+console.table(data, columns)
 ```
 
 ## `console.time()`, `timeLog()` et `timeEnd()` - Chronométrer une durée d'exécution
 
-Description à faire par vos soins...
+Permet de calculer combien de temps est nécéssaire pour exécuter une opération.
+time(): démarre le timer
+timeLog(): affiche le temps écoulé
+timeEnd(): arrête le timers 
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.time('boucle'); 
+for (let i = 0; i < 1_000_000; i++) {
+    Math.sqrt(i);
+    if (i === 500_000) console.timeLog('boucle'); 
+}
+
+console.timeEnd('boucle');
+
+// Exemple de résultat
+boucle: 12.34ms
+boucle: 25.67ms
 ```
 
 <svg height="12" width="100%" style="padding-top:2em;padding-bottom:1em">
@@ -458,20 +490,35 @@ Lien vers la documentation officielle : [https://developer.mozilla.org/fr/docs/W
 
 ## `forEach` - parcourir les éléments d'un tableau
 
-Description à faire par vos soins...
+Exécute une fonction définie dans le code sur chaque élément d'un tableau.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const array = ["a", "b", "c"];
+
+array.forEach((element) => console.log(element));
+
+// Résultat
+"a"
+"b"
+"c"
 ```
 
 ## `entries()` - parcourir les couples index/valeurs d'un tableau
 
-Description à faire par vos soins...
+Permet de parcourir les couples index/valeurs d'un tableau en créant un nouvel itérateur qui contient les clé valeurs.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const array = ["a", "b", "c"];
+
+const iterator = array.entries();
+
+console.log(iterator.next().value);
+console.log(iterator.next().value);
+
+// Résultat
+Array [0, "a"]
+Array [1, "b"]
+
 ```
 
 ## `in` - parcourir les clés d'un tableau
@@ -618,6 +665,7 @@ Permet de trier les objets du tableau par odre alphabétique ou ordre croissant 
 const months = ["March", "Jan", "Feb", "Dec"];
 months.sort();
 console.log(months);
+// OU months.sort((a, b) => a.month.localeCompare(b.month));
 
 const array = [1, 30, 4, 21, 100000];
 array.sort();
