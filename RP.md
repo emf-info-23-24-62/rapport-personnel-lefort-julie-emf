@@ -81,7 +81,7 @@
 
 > Votre introduction avec notamment les objectifs opérationnels du module.
 
-# Opérateurs javascript super-cooool 😎
+# Opérateurs javascript
 
 ## opérateur `?:`
 
@@ -205,101 +205,130 @@ Lien vers la documentation officielle : [https://developer.mozilla.org/fr/docs/W
 
 ## `Math.PI` - la constante π
 
-Description à faire par vos soins...
+Représente la constante Pi (environ 3.14159)
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.PI);
+
+// Resultat
+3.141592653589793
 ```
 
 ## `Math.abs()` - la \|valeur absolue\| d'un nombre
 
-Description à faire par vos soins...
+Retourne la valeur absolue d'un nombre (pas de valeur négative)
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+function difference(a, b) {
+  return Math.abs(a - b);
+}
+
+console.log(difference(3, 5));
+
+// Resultat
+2
 ```
 
 ## `Math.pow()` - élever à une puissance
 
-Description à faire par vos soins...
+Permet d'élever un nombre à une puissance. Le premier nombre est l'indice et le 2eme est l'exposant
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.pow(7, 3));
+
+// Resultat
+343
 ```
 
 ## `Math.min()` - plus petite valeur
 
-Description à faire par vos soins...
+Renvoie la plus petite valeur d'une collection
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.min(2, 3, 1));
+
+// Resultat
+1
 ```
 
 ## `Math.max()` - plus grande valeur
 
-Description à faire par vos soins...
+Renvoie la plus grande valeur d'une collection
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.max(2, 3, 1));
+
+// Resultat
+3
 ```
 
 ## `Math.ceil()` - arrondir à la prochaine valeur entière la plus proche
 
-Description à faire par vos soins...
+Arrondit à la valeur entière la plus proche, mais seulement vers le haut
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.ceil(7.004));
+
+// Resultat
+8
 ```
 
 ## `Math.floor()` - arrondir à la précédente valeur entière la plus proche
 
-Description à faire par vos soins...
+Arrondit à la valeur entière la plus proche, mais seulement vers le bas
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.floor(7.95));
+
+// Resultat
+7
 ```
 
 ## `Math.round()` - arrondir à la valeur entière la plus proche
 
-Description à faire par vos soins...
+Permet d'arrondir un nombre à la valeur entière la plus proche.  
+Exemple pour calculer une note d'école arrondie:
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+Math.round((48 / 52) * 5 + 1)
+
+// Resultat
+6
 ```
 
 ## `Math.trunc()` - supprime la virgule et retourne la partie entière d'un nombre
 
-Description à faire par vos soins...
-
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+Math.trunc(13.37)
+
+// Résultat
+13
 ```
 
 ## `Math.sqrt()` - la raçine carrée d'un nombre
 
-Description à faire par vos soins...
+Fais la racine carrée d'un nombre
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+Math.sqrt(4)
+
+// Resultat 
+2
 ```
 
 ## `Math.random()` - générer un nombre aléatoire entre 0.0 (compris) et 1.0 (non compris)
 
-Description à faire par vos soins...
+Génère une valeur aléatoire entre 0.0 et 1, peut ensuite être adaptée pour renvoyer d'autres valeurs
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+console.log(getRandomInt(3));
+// Resultat
+1, 2 ou 3
+
 ```
 
 <svg height="12" width="100%" style="padding-top:2em;padding-bottom:1em">
@@ -312,20 +341,30 @@ Lien vers la documentation officielle : [https://developer.mozilla.org/fr/docs/W
 
 ## `JSON.stringify()` - transformer un objet Javascript en JSON
 
-Description à faire par vos soins...
+Convertit une valeur JavaScript en une chaîne JSON, en remplaçant éventuellement les valeurs si une fonction de remplacement est spécifiée ou en incluant éventuellement uniquement les propriétés spécifiées si un tableau de remplacement est spécifié.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(JSON.stringify({ x: 5, y: 6 }));
+
+// Résultat
+{"x":5,"y":6}
+
 ```
 
 ## `JSON.parse()` - transformer du JSON en objet Javascript
 
-Description à faire par vos soins...
-
+Analyse une chaîne JSON et construit la valeur ou l'objet JavaScript correspondant. Une fonction de restauration optionnelle peut être fournie pour effectuer une transformation sur l'objet résultant avant son renvoi.  
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const json = '{"result":true, "count":42}';
+const obj = JSON.parse(json);
+
+console.log(obj.count);
+
+console.log(obj.result);
+
+// Résultat
+42
+true
 ```
 
 <svg height="12" width="100%" style="padding-top:2em;padding-bottom:1em">
@@ -338,29 +377,50 @@ Lien vers la documentation officielle : [https://developer.mozilla.org/fr/docs/W
 
 ## `split()` - un ciseau qui coupe une chaîne là où un caractère apparaît et produit un tableau
 
-Description à faire par vos soins...
+Permet de séparer un string json en fonction du charatère spécifié et renvoie un nouveau tableau. 
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const str = "The quick brown fox jumps over the lazy dog.";
+
+const words = str.split(" ");
+console.log(words[3]);
+
+// Résultat
+fox
 ```
 
 ## `trim()`, `trimStart()` et `trimEnd()` - épuration des espaces en trop dans une chaîne (trimming)
 
-Description à faire par vos soins...
+Supprime les espaces avant et après un String et renvoie le résultat.  
+trimEnd supprime les espace seulement à la fin et trimStart seulement au début.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const greeting = "   Hello world!   ";
+
+console.log(greeting.trim());
+console.log(greeting.trimStart());
+console.log(greeting.trimEnd());
+
+// Résultat
+"Hello World"
+"Hello World   "
+"   Hello World"
 ```
 
 ## `padStart()` et `padEnd()` - aligner le contenu dans une chaîne de caractères
 
-Description à faire par vos soins...
+Permet de rallonger les String avec un charactère donné pour que le String atteigne une longueur précise.  
+padStart() rallonge le début et padEnd() rallonge la fin.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const str1 = "Breaded Mushrooms";
+
+console.log(str1.padEnd(25, "."));
+console.log(str1.padStart(25, "."));
+
+// Résultat
+"Breaded Mushrooms........"
+"........Breaded Mushrooms"
 ```
 
 <svg height="12" width="100%" style="padding-top:2em;padding-bottom:1em">
@@ -379,29 +439,45 @@ console.log('Coucou !'); // Coucou !
 
 ## `console.info()`, `warn()` et `error()` - Afficher un message sur la console (filtrables)
 
-Description à faire par vos soins...
+Permet d'afficher des messages précis sur la console.  
+- info(): message d'information  
+- warn(): avertissement  
+- error(): erreurs  
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.error("Erreur");
+console.warn("Avertissement");
+console.info("Info");
 ```
 
 ## `console.table()` - Afficher tout un tableau ou un objet sur la console
 
-Description à faire par vos soins...
+Affiche les données tabulaires sous forme de tableau.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.table(data)
+console.table(data, columns)
 ```
 
 ## `console.time()`, `timeLog()` et `timeEnd()` - Chronométrer une durée d'exécution
 
-Description à faire par vos soins...
+Permet de calculer combien de temps est nécéssaire pour exécuter une opération.
+time(): démarre le timer
+timeLog(): affiche le temps écoulé
+timeEnd(): arrête le timers 
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.time('boucle'); 
+for (let i = 0; i < 1_000_000; i++) {
+    Math.sqrt(i);
+    if (i === 500_000) console.timeLog('boucle'); 
+}
+
+console.timeEnd('boucle');
+
+// Exemple de résultat
+boucle: 12.34ms
+boucle: 25.67ms
 ```
 
 <svg height="12" width="100%" style="padding-top:2em;padding-bottom:1em">
@@ -414,218 +490,491 @@ Lien vers la documentation officielle : [https://developer.mozilla.org/fr/docs/W
 
 ## `forEach` - parcourir les éléments d'un tableau
 
-Description à faire par vos soins...
+Exécute une fonction définie dans le code sur chaque élément d'un tableau.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const array = ["a", "b", "c"];
+
+array.forEach((element) => console.log(element));
+
+// Résultat
+"a"
+"b"
+"c"
 ```
 
 ## `entries()` - parcourir les couples index/valeurs d'un tableau
 
-Description à faire par vos soins...
+Permet de parcourir les couples index/valeurs d'un tableau en créant un nouvel itérateur qui contient les clé valeurs.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const array = ["a", "b", "c"];
+
+const iterator = array.entries();
+
+console.log(iterator.next().value);
+console.log(iterator.next().value);
+
+// Résultat
+Array [0, "a"]
+Array [1, "b"]
+
 ```
 
 ## `in` - parcourir les clés d'un tableau
 
-Description à faire par vos soins...
+Permet de parcourir les clés d'un tableau afin de vérifier si un index existe.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const arr = ["a", "b", "c"];
+
+console.log(1 in arr);  
+console.log(3 in arr);   
+console.log("a" in arr); 
+
+// Résultat
+true
+false
+false
 ```
 
 ## `of` - parcourir les valeurs d'un tableau
 
-Description à faire par vos soins...
+Permet de parcourir les valeurs du tableau dans une boucle for ... of.
+
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const arr = ["a", "b", "c"];
+
+for (const value of arr) {
+    console.log(value);
+}
+
+// Résultat
+a
+b
+c
 ```
 
 ## `find()` - premier élément qui satisfait une condition
 
-Description à faire par vos soins...
+Parcours les éléments du tableau etourne le premier élément qui satisfait la condition établie.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const array = [5, 12, 8, 130, 44];
+
+const found = array.find((element) => element > 10);
+
+console.log(found);
+
+// Résultat
+12
 ```
 
 ## `findIndex()` - premier index qui satisfait une condition
 
-Description à faire par vos soins...
+Retourne le premier index qui satisfait la condition établie en parcourant le tableau.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const array = [5, 12, 8, 130, 44];
+
+const isLargeNumber = (element) => element > 13;
+
+console.log(array.findIndex(isLargeNumber));
+
+// Résultat
+3
 ```
 
 ## `indexOf()` et `lastIndexOf()` - premier/dernier élément qui correspond
 
-Description à faire par vos soins...
+Renvoie le premier ou le dernier index où se trouvent l'élément recherché en fonction de l'index de départ spécifié.  
+ Si il n'est pas trouvé, il renvoie -1.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const beasts = ["ant", "bison", "camel", "duck", "bison"];
+
+console.log(beasts.indexOf("bison"));
+// Expected output: 1
+
+// Cherche depuis l'index 2
+console.log(beasts.indexOf("bison", 2));
+// Expected output: 4
+
+console.log(beasts.indexOf("giraffe"));
+
+console.log(beasts.lastIndexOf("bison"));
+// Expected output: -1
+
+// Résultat
+1
+2
+4
+-1
+4
 ```
 
 ## `push()`, `pop()`, `shift()` et `unshift()` - ajouter/supprime au début/fin dans un tableau
 
-Description à faire par vos soins...
+- push() : ajoute un élément à la fin d'un Array et renvoie la nouvelle longueur de l'Array
+- pop() : supprime le dernier élément d'un tableau et renvoie cet élément.
+- shift() : supprime le premier élément d'un tableau et renvoie cet élément.
+- unshift() : ajoute l'élément spécifié au début d'un Array et renvoie la nouvelle longueur
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+// PUSH
+  const animals = ["pigs", "goats", "sheep"];
+
+  const count = animals.push("cows");
+  console.log(count);
+
+  console.log(animals);
+
+  // Résultat
+  Array ["pigs", "goats", "sheep", "cows"]
+// POP
+  const plants = ["broccoli", "cauliflower", "cabbage", "kale", "tomato"];
+
+  console.log(plants.pop());
+
+  console.log(plants);
+
+  // Résultat
+  "tomato"
+  Array ["broccoli", "cauliflower", "cabbage", "kale"]
+
+// SHIFT
+  const array = [1, 2, 3];
+
+  const firstElement = array.shift();
+
+  console.log(array);
+
+  console.log(firstElement);
+
+  // Résultat
+  Array [2, 3]
+  1
+
+// UNSHIFT
+  const array = [1, 2, 3];
+
+  console.log(array.unshift(4, 5));
+
+  console.log(array);
+
+  // Résultat
+  5
+  Array [4, 5, 1, 2, 3]
 ```
 
 ## `slice()` - ne conserver que certaines lignes d'un tableau
 
-Description à faire par vos soins...
+Retourne une copie de seulement une partie du tableau dans un nouveau tableau sélectionné du début à la fin. Le tableau original n'est pas modifié
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const animals = ["ant", "bison", "camel", "duck", "elephant"];
+
+console.log(animals.slice(2));
+
+console.log(animals.slice(2, 4));
+
+// Résultat
+Array ["camel", "duck", "elephant"]
+Array ["camel", "duck"]
 ```
 
 ## `splice()` - supprimer/insérer/remplacer des valeurs dans un tableau
 
-Description à faire par vos soins...
+Modifie le contenu d'un tableau en supprimant ou en remplaçant les éléments existants et/ou en ajoutant de nouveaux éléments à leur place
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const months = ["Jan", "March", "April", "June"];
+months.splice(1, 0, "Feb");
+// Insère à l'index 1
+
+console.log(months);
+
+//Résultat
+Array ["Jan", "Feb", "March", "April", "June"]
+
 ```
 
 ## `concat()` - joindre deux tableaux
 
-Description à faire par vos soins...
+Permet de fusionner plusieurs tableaux ensemble. Cette méthode ne modifie pas les tableaux de base mais en retourne un nouveau
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const array1 = ["a", "b", "c"];
+const array2 = ["d", "e", "f"];
+const array3 = array1.concat(array2);
+
+console.log(array3);
+
+// Résultat
+Array ["a", "b", "c", "d", "e", "f"]
 ```
 
 ## `join()` - joindre des chaînes de caractères
 
-Description à faire par vos soins...
+Permet de transformer un tableau en une seule chaîne, en insérant un séparateur entre chaque élément.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const elements = ["feu", "eau", "vent"];
+
+console.log(elements.join(", "));
+console.log(elements.join(" / "));
+console.log(elements.join(""));
+
+// Résultat
+"feu, eau, vent"
+"feu / eau / vent"
+"feueauvent"
 ```
 
 ## `keys()` et `values()` - les clés/valeurs d'un objet
 
-Description à faire par vos soins...
+- keys() retourne toutes les clés d’un objet.
+- values() retourne toutes les valeurs d’un objet.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const obj = { nom: "Julie", age: 21 };
+
+console.log(Object.keys(obj));
+console.log(Object.values(obj));
+
+// Résultat
+["nom", "age"]
+["Julie", 21]
 ```
 
 ## `includes()` - vérifier si une valeur est présente dans un tableau
 
-Description à faire par vos soins...
+Vérifie si une valeur est présente dans un tableau et renvoie true ou false en fonction du résultat.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const array = [1, 2, 3];
+const pets = ["cat", "dog", "bat"];
+
+console.log(array.includes(2));
+
+console.log(pets.includes("cat"));
+
+console.log(pets.includes("at"));
+
+// Résultat
+true
+true
+false
 ```
 
 ## `every()` et `some()` - vérifier si plusieurs valeurs sont toutes/quelques présentes dans un tableau
 
-Description à faire par vos soins...
+Vérifier la présence de valeurs dans un tableau. every() renvoie true si toutes les cases remplissent la condition, alors que some() renvoie true si au moins 1 case rempli la condition.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const isBelowThreshold = (currentValue) => currentValue < 40;
+
+const array1 = [1, 30, 67, 29, 10, 13];
+
+console.log(array1.every(isBelowThreshold));
+
+console.log(array1.some(isBelowThreshold));
+// Résultat
+false
+true
+
 ```
 
 ## `fill()` - remplir un tableau avec des valeurs
 
-Description à faire par vos soins...
+Permet de remplir un tableau avec des valeurs en spécifiant l'index de départ et l'index d'arrêt.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const array = [1, 2, 3, 4];
+
+// Remplir avec des 0 de l'index 2 à 4
+console.log(array.fill(0, 2, 4));
+
+// Remplir de 5 depuis l'index 1
+console.log(array.fill(5, 1));
+
+// Remplir de 6
+console.log(array.fill(6));
+
+// Résultat
+Array [1, 2, 0, 0]
+Array [1, 5, 5, 5]
+Array [6, 6, 6, 6]
 ```
 
 ## `flat()` - aplatir un tableau
 
-Description à faire par vos soins...
+Crée un nouveau tableau dans lequel tous les éléments des sous-tableaux sont concaténés récursivement jusqu'à la profondeur spécifiée.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const arr1 = [0, 1, 2, [3, 4]];
+
+console.log(arr1.flat());
+
+// Résultat 
+Array [0, 1, 2, 3, 4]
 ```
 
 ## `sort()` - pour trier un tableau
 
-Description à faire par vos soins...
+Permet de trier les objets du tableau par odre alphabétique ou ordre croissant pour les chiffres. 
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+// Code
+const months = ["March", "Jan", "Feb", "Dec"];
+months.sort();
+console.log(months);
+// OU months.sort((a, b) => a.month.localeCompare(b.month));
+
+const array = [1, 30, 4, 21, 100000];
+array.sort();
+console.log(array);
+
+// Résultat 
+Array ["Dec", "Feb", "Jan", "March"]
+Array [1, 100000, 21, 30, 4]
 ```
 
 ## `map()` - tableau avec les résultats d'une fonction
 
-Description à faire par vos soins...
+Permet de gérer l'affichage de données (tableaux, JSON, etc.)
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+// Données
+const dataMotos = [
+    {
+        marque: "Honda",
+        modeles: [
+            { nom: "CB750 Four", annee: 1969, prix: 12000, puissance: 67, couple: 60 },
+            { nom: "Africa Twin CRF1100L", annee: 2020, prix: 15000, puissance: 102, couple: 105 },
+            { nom: "CBR1000RR Fireblade", annee: 2024, prix: 23000, puissance: 218, couple: 113 },
+            { nom: "Gold Wing", annee: 2024, prix: 33000, puissance: 126, couple: 170 },
+        ]
+    }, ... ]
+
+//Code
+function actionM1() {
+    const resultat = dataMotos.map((moto) => moto.marque);
+
+    afficherObjet(resultat);
+}
+
+//Résultat
+[
+   "Honda",
+   "Yamaha",
+   "Ducati",
+   "BMW",
+   "Harley-Davidson"
+]
 ```
 
 ## `filter()` - tableau avec les éléments passant un test
 
-Description à faire par vos soins...
+Permet de filtrer des données afin d'obtenir seulement celles dont on a besoin
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+// Données
+const dataVilles = [
+    // FRIBOURG (FR)
+    { ville: "Fribourg", canton: "FR", habitants: 39000 },
+    { ville: "Bulle", canton: "FR", habitants: 24400 },
+    { ville: "Villars-sur-Glâne", canton: "FR", habitants: 12500 },
+    ... ]
+// Code
+function actionF2() {
+
+    const resultat = dataVilles.filter(ville => ville.habitants > 10000 && ville.habitants < 25000 && ville.canton === "FR");
+
+    afficherObjet(resultat);
+}
+
+// Résultat
+[
+   {
+      "ville": "Bulle",
+      "canton": "FR",
+      "habitants": 24400
+   },
+   {
+      "ville": "Villars-sur-Glâne",
+      "canton": "FR",
+      "habitants": 12500
+   }
+]
 ```
 
 ## `groupBy()` - regroupe les éléments d'un tableau selon un règle
 
-Description à faire par vos soins...
-
+Permet de grouper les éléments d'un tableau en fonction d'une colonne. 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+// Code
+const inventory = [
+  { name: "asparagus", type: "vegetables", quantity: 9 },
+  { name: "bananas", type: "fruit", quantity: 5 },
+  { name: "goat", type: "meat", quantity: 23 },
+  { name: "cherries", type: "fruit", quantity: 12 },
+  { name: "fish", type: "meat", quantity: 5 },
+];
+
+const result = Object.groupBy(inventory, ({ quantity }) =>
+  quantity < 6 ? "restock" : "sufficient",
+);
+
+// Resultat
+Array [Object { name: "bananas", type: "fruit", quantity: 5 }, Object { name: "fish", type: "meat", quantity: 5 }]
 ```
 
 ## `flatMap()` - chaînage de map() et flat()
 
-Description à faire par vos soins...
+Permet de créer un nouveau tableau à partir du résultat d'un traitement d'élément. 
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+// Code
+const resultat = dataMotos.flatMap((moto) => moto.modeles.map((modele) => `${moto.marque} / ${modele.nom}`)).sort();
+
+// Résultat
+[
+   "BMW / K1600GTL",
+   "BMW / R nineT",
+   "BMW / R1250GS",
+   "BMW / S1000RR",
+   ...
+]
 ```
 
 ## `reduce()` et `reduceRight()` - réduire un tableau à une seule valeur
 
-Description à faire par vos soins...
+Exécute une fonction décrite par l'utilisateur sur chaque élément du tableau et retourne une seule valeur à la fin.  
+`reduceRight()` permet de faire la même chose, mais de droite à gauche (`reduce` le fait de gauche à droite).
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+// Code
+const resultat = dataEvaluations.reduce((petit, note) => (note.date < petit.date ? { ...note } : petit), dataEvaluations[0]);
+
+    afficherObjet(resultat.date);
+
+// Resultat
+
 ```
 
 ## `reverse()` - inverser l'ordre du tableau
 
-Description à faire par vos soins...
+Inverse l’ordre des éléments directement dans le tableau original.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const arr = [1, 2, 3];
+
+console.log(arr.reverse());
+
+// Résultat
+[3, 2, 1]
 ```
 
 <svg height="12" width="100%" style="padding-top:2em;padding-bottom:1em">
@@ -636,20 +985,42 @@ SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
 
 ## ``(backticks) - pour des expressions intelligentes
 
-Description à faire par vos soins...
+Permet de créer des chaînes dynamiques, avec des expressions ${...} et du texte sur plusieurs lignes.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const nom = "Julie";
+const age = 21;
+
+const message = `Je m'appelle ${nom} et j'ai ${age} ans.`;
+
+console.log(message);
+
+// Résultat
+"Je m'appelle Julie et j'ai 21 ans."
 ```
 
 ## `new Set()` - pour supprimer les doublons
 
-Description à faire par vos soins...
+Crée un nouveau tableau sans doublon.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+// Code
+const resultat = [...new Set(dataEvaluations.map((e) => e.nom + ' ' + e.prenom))].sort();
+    afficherObjet(resultat);
+
+// Resultat 
+[
+   "D'ŒUF John",
+   "FICE Eddy",
+   "HARONI Mac",
+   "NISSENS Remy",
+   "RIQUE Théo",
+   "TARISTE Guy",
+   "TERNET Alain",
+   "TERRIEUR Alain",
+   "TERRIEUR Alex",
+   "VOYANTE Claire"
+]
 ```
 
 <svg height="12" width="100%" style="padding-top:2em;padding-bottom:1em">
@@ -710,4 +1081,14 @@ ou
 
 # Conclusion
 
-> Votre conclusion avec les éléments usuels
+## Ce que j'ai appris 
+Dans ce module, nous avons appris à utiliser des fonctions de programmation fonctionnelle, ce qui est très nouveau dans notre façon de coder. Nous avons aussi pu revoir des notions javascript que nous avions déjà apprises lors d'autres modules.
+
+## Mes points forts
+
+Je pense avoir bien compris la plupart des notions vues en classe comme le pipe, les buildeer pattern, map(), filter() etc. J'ai trouvé que j'arrivai bien à implémenter ce qui était demandé.
+
+## Mes points faibles
+
+J'ai encore un peu de peine à utiliser les reduce(), surtout la logique de déconstruction des données. 
+
