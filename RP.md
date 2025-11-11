@@ -523,137 +523,302 @@ Array [1, "b"]
 
 ## `in` - parcourir les clés d'un tableau
 
-Description à faire par vos soins...
+Permet de parcourir les clés d'un tableau afin de vérifier si un index existe.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const arr = ["a", "b", "c"];
+
+console.log(1 in arr);  
+console.log(3 in arr);   
+console.log("a" in arr); 
+
+// Résultat
+true
+false
+false
 ```
 
 ## `of` - parcourir les valeurs d'un tableau
 
-Description à faire par vos soins...
+Permet de parcourir les valeurs du tableau dans une boucle for ... of.
+
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const arr = ["a", "b", "c"];
+
+for (const value of arr) {
+    console.log(value);
+}
+
+// Résultat
+a
+b
+c
 ```
 
 ## `find()` - premier élément qui satisfait une condition
 
-Description à faire par vos soins...
+Parcours les éléments du tableau etourne le premier élément qui satisfait la condition établie.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const array = [5, 12, 8, 130, 44];
+
+const found = array.find((element) => element > 10);
+
+console.log(found);
+
+// Résultat
+12
 ```
 
 ## `findIndex()` - premier index qui satisfait une condition
 
-Description à faire par vos soins...
+Retourne le premier index qui satisfait la condition établie en parcourant le tableau.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const array = [5, 12, 8, 130, 44];
+
+const isLargeNumber = (element) => element > 13;
+
+console.log(array.findIndex(isLargeNumber));
+
+// Résultat
+3
 ```
 
 ## `indexOf()` et `lastIndexOf()` - premier/dernier élément qui correspond
 
-Description à faire par vos soins...
+Renvoie le premier ou le dernier index où se trouvent l'élément recherché en fonction de l'index de départ spécifié.  
+ Si il n'est pas trouvé, il renvoie -1.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const beasts = ["ant", "bison", "camel", "duck", "bison"];
+
+console.log(beasts.indexOf("bison"));
+// Expected output: 1
+
+// Cherche depuis l'index 2
+console.log(beasts.indexOf("bison", 2));
+// Expected output: 4
+
+console.log(beasts.indexOf("giraffe"));
+
+console.log(beasts.lastIndexOf("bison"));
+// Expected output: -1
+
+// Résultat
+1
+2
+4
+-1
+4
 ```
 
 ## `push()`, `pop()`, `shift()` et `unshift()` - ajouter/supprime au début/fin dans un tableau
 
-Description à faire par vos soins...
+- push() : ajoute un élément à la fin d'un Array et renvoie la nouvelle longueur de l'Array
+- pop() : supprime le dernier élément d'un tableau et renvoie cet élément.
+- shift() : supprime le premier élément d'un tableau et renvoie cet élément.
+- unshift() : ajoute l'élément spécifié au début d'un Array et renvoie la nouvelle longueur
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+// PUSH
+  const animals = ["pigs", "goats", "sheep"];
+
+  const count = animals.push("cows");
+  console.log(count);
+
+  console.log(animals);
+
+  // Résultat
+  Array ["pigs", "goats", "sheep", "cows"]
+// POP
+  const plants = ["broccoli", "cauliflower", "cabbage", "kale", "tomato"];
+
+  console.log(plants.pop());
+
+  console.log(plants);
+
+  // Résultat
+  "tomato"
+  Array ["broccoli", "cauliflower", "cabbage", "kale"]
+
+// SHIFT
+  const array = [1, 2, 3];
+
+  const firstElement = array.shift();
+
+  console.log(array);
+
+  console.log(firstElement);
+
+  // Résultat
+  Array [2, 3]
+  1
+
+// UNSHIFT
+  const array = [1, 2, 3];
+
+  console.log(array.unshift(4, 5));
+
+  console.log(array);
+
+  // Résultat
+  5
+  Array [4, 5, 1, 2, 3]
 ```
 
 ## `slice()` - ne conserver que certaines lignes d'un tableau
 
-Description à faire par vos soins...
+Retourne une copie de seulement une partie du tableau dans un nouveau tableau sélectionné du début à la fin. Le tableau original n'est pas modifié
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const animals = ["ant", "bison", "camel", "duck", "elephant"];
+
+console.log(animals.slice(2));
+
+console.log(animals.slice(2, 4));
+
+// Résultat
+Array ["camel", "duck", "elephant"]
+Array ["camel", "duck"]
 ```
 
 ## `splice()` - supprimer/insérer/remplacer des valeurs dans un tableau
 
-Description à faire par vos soins...
+Modifie le contenu d'un tableau en supprimant ou en remplaçant les éléments existants et/ou en ajoutant de nouveaux éléments à leur place
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const months = ["Jan", "March", "April", "June"];
+months.splice(1, 0, "Feb");
+// Insère à l'index 1
+
+console.log(months);
+
+//Résultat
+Array ["Jan", "Feb", "March", "April", "June"]
+
 ```
 
 ## `concat()` - joindre deux tableaux
 
-Description à faire par vos soins...
+Permet de fusionner plusieurs tableaux ensemble. Cette méthode ne modifie pas les tableaux de base mais en retourne un nouveau
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const array1 = ["a", "b", "c"];
+const array2 = ["d", "e", "f"];
+const array3 = array1.concat(array2);
+
+console.log(array3);
+
+// Résultat
+Array ["a", "b", "c", "d", "e", "f"]
 ```
 
 ## `join()` - joindre des chaînes de caractères
 
-Description à faire par vos soins...
+Permet de transformer un tableau en une seule chaîne, en insérant un séparateur entre chaque élément.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const elements = ["feu", "eau", "vent"];
+
+console.log(elements.join(", "));
+console.log(elements.join(" / "));
+console.log(elements.join(""));
+
+// Résultat
+"feu, eau, vent"
+"feu / eau / vent"
+"feueauvent"
 ```
 
 ## `keys()` et `values()` - les clés/valeurs d'un objet
 
-Description à faire par vos soins...
+- keys() retourne toutes les clés d’un objet.
+- values() retourne toutes les valeurs d’un objet.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const obj = { nom: "Julie", age: 21 };
+
+console.log(Object.keys(obj));
+console.log(Object.values(obj));
+
+// Résultat
+["nom", "age"]
+["Julie", 21]
 ```
 
 ## `includes()` - vérifier si une valeur est présente dans un tableau
 
-Description à faire par vos soins...
+Vérifie si une valeur est présente dans un tableau et renvoie true ou false en fonction du résultat.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const array = [1, 2, 3];
+const pets = ["cat", "dog", "bat"];
+
+console.log(array.includes(2));
+
+console.log(pets.includes("cat"));
+
+console.log(pets.includes("at"));
+
+// Résultat
+true
+true
+false
 ```
 
 ## `every()` et `some()` - vérifier si plusieurs valeurs sont toutes/quelques présentes dans un tableau
 
-Description à faire par vos soins...
+Vérifier la présence de valeurs dans un tableau. every() renvoie true si toutes les cases remplissent la condition, alors que some() renvoie true si au moins 1 case rempli la condition.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const isBelowThreshold = (currentValue) => currentValue < 40;
+
+const array1 = [1, 30, 67, 29, 10, 13];
+
+console.log(array1.every(isBelowThreshold));
+
+console.log(array1.some(isBelowThreshold));
+// Résultat
+false
+true
+
 ```
 
 ## `fill()` - remplir un tableau avec des valeurs
 
-Description à faire par vos soins...
+Permet de remplir un tableau avec des valeurs en spécifiant l'index de départ et l'index d'arrêt.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const array = [1, 2, 3, 4];
+
+// Remplir avec des 0 de l'index 2 à 4
+console.log(array.fill(0, 2, 4));
+
+// Remplir de 5 depuis l'index 1
+console.log(array.fill(5, 1));
+
+// Remplir de 6
+console.log(array.fill(6));
+
+// Résultat
+Array [1, 2, 0, 0]
+Array [1, 5, 5, 5]
+Array [6, 6, 6, 6]
 ```
 
 ## `flat()` - aplatir un tableau
 
-Description à faire par vos soins...
+Crée un nouveau tableau dans lequel tous les éléments des sous-tableaux sont concaténés récursivement jusqu'à la profondeur spécifiée.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const arr1 = [0, 1, 2, [3, 4]];
+
+console.log(arr1.flat());
+
+// Résultat 
+Array [0, 1, 2, 3, 4]
 ```
 
 ## `sort()` - pour trier un tableau
@@ -747,8 +912,7 @@ function actionF2() {
 
 ## `groupBy()` - regroupe les éléments d'un tableau selon un règle
 
-Description à faire par vos soins...
-
+Permet de grouper les éléments d'un tableau en fonction d'une colonne. 
 ```javascript
 // Code
 const inventory = [
@@ -802,11 +966,15 @@ const resultat = dataEvaluations.reduce((petit, note) => (note.date < petit.date
 
 ## `reverse()` - inverser l'ordre du tableau
 
-Description à faire par vos soins...
+Inverse l’ordre des éléments directement dans le tableau original.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const arr = [1, 2, 3];
+
+console.log(arr.reverse());
+
+// Résultat
+[3, 2, 1]
 ```
 
 <svg height="12" width="100%" style="padding-top:2em;padding-bottom:1em">
@@ -817,11 +985,18 @@ SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
 
 ## ``(backticks) - pour des expressions intelligentes
 
-Description à faire par vos soins...
+Permet de créer des chaînes dynamiques, avec des expressions ${...} et du texte sur plusieurs lignes.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const nom = "Julie";
+const age = 21;
+
+const message = `Je m'appelle ${nom} et j'ai ${age} ans.`;
+
+console.log(message);
+
+// Résultat
+"Je m'appelle Julie et j'ai 21 ans."
 ```
 
 ## `new Set()` - pour supprimer les doublons
@@ -906,9 +1081,14 @@ ou
 
 # Conclusion
 
-## Ce que j'ai appris  
+## Ce que j'ai appris 
+Dans ce module, nous avons appris à utiliser des fonctions de programmation fonctionnelle, ce qui est très nouveau dans notre façon de coder. Nous avons aussi pu revoir des notions javascript que nous avions déjà apprises lors d'autres modules.
 
 ## Mes points forts
 
+Je pense avoir bien compris la plupart des notions vues en classe comme le pipe, les buildeer pattern, map(), filter() etc. J'ai trouvé que j'arrivai bien à implémenter ce qui était demandé.
+
 ## Mes points faibles
+
+J'ai encore un peu de peine à utiliser les reduce(), surtout la logique de déconstruction des données. 
 
