@@ -1,13 +1,11 @@
 <h1>🤔 RP - 323 - Programmation fonctionnelle</h1>
 
->[!TIP]
->**Référence Javascript:** <https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference>  
->**Tester du code JS** : <https://runjs.app/play>  
->**Convertir en PDF** : <https://marketplace.visualstudio.com/items?itemName=manuth.markdown-converter>
+Auteur : Lefort Julie
 
 <h1>Table des matières</h1>
 
 - [Introduction](#introduction)
+  - [Objectifs opérationnels](#opjectifs-opérationnels)
 - [Opérateurs javascript super-cooool 😎](#opérateurs-javascript-super-cooool-)
   - [opérateur `?:`](#opérateur-)
   - [opérateur `??`](#opérateur--1)
@@ -79,7 +77,33 @@
 
 # Introduction
 
-> Votre introduction avec notamment les objectifs opérationnels du module.
+## Objectifs opérationnels
+Dans ce module, nous allons apprendre à développer de manière fonctionnelle en Javascript.  
+Nous allons apprendre les principes et les règles, ainsi que nous exercer au traitement de données grace à des fonctions spécialement utilisées en PF.  
+Ce RP permettra donc de recenser les choses vues durant ce module, en expliquant les méthodes et en donnant des exemples pour leur utilisation.
+
+Voici les objectifs du module, repris du PR: 
+Introduction à la programmation fonctionnelle :
+  -  Paradigmes de programmation
+  - Fonctions fléchées
+  - Définition et utilité de la programmation fonctionnelle
+Fonctions fondamentales
+  - Fonction map
+  - Fonction filter
+  - Fonction reduce
+Concepts de programmation fonctionnelle
+  - Fist class citizen
+  - Fonctions lambda
+  - Immuabilité
+  - Fonctions pures
+  - Composition de fonctions :
+    - Fonctions unaires
+    - Currying
+    - Closure
+    - Fonction pipe
+  - Récursion
+  - Builder pattern
+  - Refactorisation
 
 # Opérateurs javascript
 
